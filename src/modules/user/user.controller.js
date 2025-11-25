@@ -72,7 +72,7 @@ export const userLogin = async (req, res) => {
 
 
 
-    console.log("this is our user informetions",user,token)
+  //  console.log("this is our user informetions",user,token)
 
     res.status(200).json({
       message: "User login successfully",
@@ -92,14 +92,14 @@ export const userLogin = async (req, res) => {
 export const getUser = async ( req,res)=>{
 try {
   const email = req.user?.email;
-  console.log("this is our email from get user ",email)
+  //console.log("this is our email from get user ",email)
   if(!email){
     return res.send( "user feild required")
   }
 
     const user  = await User.findOne({email})
 
-console.log("this is our email from get user",email)
+//console.log("this is our email from get user",email)
 
     res.status(200).json({
       message:"user get succesfully",

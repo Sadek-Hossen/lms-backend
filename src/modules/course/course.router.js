@@ -1,11 +1,13 @@
 import { Router } from "express";
-import { createCourse, getCourses } from "./course.controller.js";
+import { createCourse, getCourses, getSingleCourse } from "./course.controller.js";
 
 
 const router =Router()
 
 router.post("/create", createCourse)
 router.get("/",getCourses)
+router.get("/details/:id", getSingleCourse)
+
 
 
 

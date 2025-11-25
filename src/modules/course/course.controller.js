@@ -31,3 +31,23 @@ export const getCourses = async (req,res)=>{
         })
     }
 }
+
+
+export const getSingleCourse = async (req,res)=>{
+    try {
+        const {id}= req.params;
+        console.log("this is single course id: ",id)
+       const courses = await Course.findById(id)
+        res.status(200).json({
+            message:"single course fetched successfully",
+            courses
+        })
+     //
+       console.log(courses)
+    } catch (error) {
+        res.status(500).json({
+            message:"failed to fetch single course",
+            error:error.message
+        })
+    }
+}
