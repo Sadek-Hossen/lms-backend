@@ -17,7 +17,7 @@ app.use(cookieParser())
 
 
 //db connected
-const uri =process.env.MONGO_URI || "mongodb://localhost:27017/LMS_project"
+const uri =process.env.MONGO_URI || "mongodb+srv://hossensadek726_db_user:OadkMR89naRmyX0E@cluster0.ob65yny.mongodb.net/?appName=Cluster0"
 mongodB(uri)
 // all routes
 app.use("/api/user",userRoute)
