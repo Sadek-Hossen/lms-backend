@@ -10,7 +10,8 @@ router.post("/register", userCreate)
 router.post("/login", userLogin)
 router.get("/", authMidleware, getUser)
 router.post("/logout", logoutUser)
-//router.get("/", getUser)
+
+
 
 
 
