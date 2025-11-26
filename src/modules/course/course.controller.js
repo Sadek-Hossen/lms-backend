@@ -51,3 +51,22 @@ export const getSingleCourse = async (req,res)=>{
         })
     }
 }
+
+export const updateCourse = async (req, res) => {
+  try {
+    const { id } = req.params;
+    const updatedCourse = await Course.findByIdAndUpdate(id, req.body, {
+      new: true,
+    });
+
+    res.status(200).json({
+      message: "course updated successfully",
+      course: updatedCourse,
+    });
+  } catch (error) {
+    res.status(500).json({
+      message: "failed to update course",
+      error: error.message,
+    });
+  }
+};
